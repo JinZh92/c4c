@@ -15,15 +15,30 @@
 
 <!-- Hero Carousel -->
 <div class="hero__container">
-	<div class="hero__carousel">
-		
+	<div class="hero__carousel" uib-carousel active="0" interval="4000" no-wrap="false">
+		<div uib-slide ng-repeat="slide in ctrl.slides track by slide.id" index="slide.id">
+			<img ng-src="{{slide.url}}">
+		</div>
 	</div>
 	
 </div>
 
 <!-- About Us -->
+<div class="aboutus__container container-fluid">
+	<div class="row row-centered">
+		<div class="aboutus__intro col-xs-10 col-centered">
+			For-Students-By-Students organization enhancing community and quality of life for students at the University of Toronto.
+		</div>
+		<div class="aboutus__link col-centered">
+			<a href="https://www.facebook.com/ouruoft/">Learn More on the Official Facebook Page</a>
+		</div>
+	</div>
+</div>
 
 <!-- Our Events -->
+<div class="events__container container-fluid">
+	<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=54dhdausv4k5ob57jrjch3f550%40group.calendar.google.com&amp;color=%23865A5A&amp;ctz=America%2FToronto" style="border:solid 1px #777" width="800" height="300" frameborder="0" scrolling="no"></iframe>
+</div>
 
 <!-- Join Us -->
 
