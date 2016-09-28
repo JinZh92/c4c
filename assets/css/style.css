@@ -1,0 +1,32 @@
+/* Nav Bar*/
+ul.nav__list{
+	height: 60px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*flex-flow: row-reverse nowrap;*/
+}
+ul.nav__list li{
+	text-align: center;
+	font-size: 1.3em;
+	flex-grow: 0.08;
+}
+
+/* Grid styles */
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
