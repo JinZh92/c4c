@@ -1,0 +1,25 @@
+{
+  "name": "c4c",
+  "version": "1.0.0",
+  "description": "C4C website",
+  "main": "app.js",
+  "dependencies": {
+    "fullcalendar": "^3.0.1",
+    "angular-ui-calendar": "^1.0.2",
+    "angular-ui-bootstrap": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JinZh92/c4c.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JinZh92/c4c/issues"
+  },
+  "homepage": "https://github.com/JinZh92/c4c#readme"
+}

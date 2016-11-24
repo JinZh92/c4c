@@ -17,6 +17,9 @@ ul.nav__list li{
 	flex-grow: 0.08;
 	font-family: 'Proxima Nova Thin', sans-serif;
 }
+ul.nav__list li:nth-child(1){
+	background-color: green;
+}
 
 /* Hero Carousel */
 .hero__container{
@@ -55,6 +58,7 @@ ul.nav__list li{
 /* Our Events */
 .events__container{
 	padding-top: 3em;
+	padding-bottom: 10px;
 	/*responsive calendar*/
 /*	position: relative; 
 	padding-bottom: 75%; 
@@ -75,7 +79,7 @@ ul.nav__list li{
 .events__title{
 	font-family: 'Raleway', sans-serif;
 	font-size: 2.5em;
-	padding-bottom: 0.5em;
+	padding-bottom: 0em;
 }
 
 /* Join us */
@@ -143,4 +147,24 @@ ul.nav__list li{
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+/* Video player*/
+.video-container { 
+	position: relative; 
+	padding-bottom: 56.25%; 
+	height: 0; 
+	overflow: hidden; 
+	max-width: 100%; 
+	height: auto; 
+} 
+.video-container iframe, 
+.video-container object, 
+.video-container embed { 
+	position: absolute; 
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%; 
+	height: 80%; 
 }

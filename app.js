@@ -5,7 +5,10 @@
 		.module('c4cApp', [
 			'ui.router',
 			'ngAnimate',
-			'ui.bootstrap'
+			'ui.bootstrap',
+			'ui.calendar',
+			'ngSanitize',
+			'com.2fdevs.videogular'
 		]);
 
 	angular

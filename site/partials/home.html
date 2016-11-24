@@ -37,13 +37,13 @@
 
 <div class="body__divider div__centered"></div>
 
-<!-- Our Events -->
+<!-- Our Events - Calendar-->
 <div class="events__container container-fluid">
 	<div class="row row-centered">
 		<div class="events__title col-xs-10 col-centered">Events Calendar</div>
 	</div>
 	
-	<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=54dhdausv4k5ob57jrjch3f550%40group.calendar.google.com&amp;color=%23865A5A&amp;ctz=America%2FToronto" style="border:solid 1px #777" width="800" height="300" frameborder="0" scrolling="no"></iframe>
+	<div ui-calendar="ctrl.uiConfig.calendar" ng-model="ctrl.eventSources"></div>
 </div>
 
 <!-- Join Us -->
@@ -56,6 +56,11 @@
 	</div>
 </div>
 
+<!-- C4C Video -->
+
+<div class="video-container">
+	<iframe src="https://player.vimeo.com/video/191602887" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
 
 <!-- Our Projects -->
 <div class="projects__container container-fluid">
