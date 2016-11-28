@@ -8,8 +8,8 @@
 		<li>Our Events</li>
 		<li>Join Us</li>
 		<li>Our Projects</li>
+		<li>Photos</li>		
 		<li>Contact Us</li>
-		<li>Photos</li>
 	</ul>
 </div>
 
@@ -27,15 +27,16 @@
 <div class="aboutus__container container-fluid">
 	<div class="row row-centered">
 		<div class="aboutus__intro col-xs-10 col-centered">
-			For-Students-By-Students organization enhancing community and quality of life for students at the University of Toronto.
+			Campaign for Community is a for-students-by-Students organization enhancing community and quality of life for students at the University of Toronto.
 		</div>
-		<div class="aboutus__link col-centered">
-			<a href="https://www.facebook.com/ouruoft/">Learn More on the Official Facebook Page</a>
+		<div class="aboutus__link col-xs-8 col-centered">
+			<a href="https://www.facebook.com/ouruoft/" target="_blank"><div class="col-xs-4">facebook</div></a>
+			<a href="https://www.facebook.com/ouruoft/" target="_blank"><div class="col-xs-4">instagram</div></a>
+			<a href="https://www.facebook.com/ouruoft/" target="_blank"><div class="col-xs-4">email</div></a>
 		</div>
 	</div>
 </div>
 
-<div class="body__divider div__centered"></div>
 
 <!-- Our Events - Calendar-->
 <div class="events__container container-fluid">
@@ -48,11 +49,22 @@
 
 <!-- Join Us -->
 <div class="joinus__container container-fluid">
+	
 	<div class="row row-centered">
-		<div class="joinus__title col-xs-10 col-centered">Join Us</div>
-		<div class="joinus__text col-xs-10 col-centered">
-			The best way to contact us is by facebook messaging David Fishbayn or emailing us at uoftcampaignforcommunity@gmail.com
+		<div class="joinus__title col-xs-12 col-centered">Join Us</div>
+		<div class="joinus__text col-xs-12 col-centered">
+			Interested in joining the C4C family? Add yourself to our E-mail list:
 		</div>
+
+		<!-- Input fields for email list -->
+		<form class="joinus__form" method="POST" ng-show="ctrl.showjoinus">
+			<input type="text" ng-model="ctrl.joinusname">
+			<input type="email" ng-model="ctrl.joinusemail">
+			<input type="submit" value="Add" ng-click="ctrl.joinUs()">
+		</form>
+
+		<div ng-show="!ctrl.showjoinus">Thank you, and Welcome!</div>
+		
 	</div>
 </div>
 
@@ -91,23 +103,46 @@
 	</div>
 </div>
 
-<!-- Contact Us -->
-<div class="contactus__container container-fluid">
-	<div class="row row-centered">
-		<div class="col-xs-10 col-centered">Contact us</div>
-		<div class="col-xs-3 col-centered">Facebook</div>
-		<div class="col-xs-3 col-centered">Instagram</div>
-		<div class="col-xs-3 col-centered">Email</div>
-	</div>
-</div>
+<div class="body__divider div__centered"></div>
 
 <!-- Photos -->
 <div class="photos__container container-fluid">
 	<div class="row row-centered">
 		<!-- can use ng-repeat here -->
-		<div class="col-xs-3 col-centered">Photo 1</div>
-		<div class="col-xs-3 col-centered">Photo 2</div>
-		<div class="col-xs-3 col-centered">Photo 3</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-centered photos__photo" ng-repeat="photo in ctrl.photos track by $index">
+			<img class="photos__item" ng-src="{{photo.url}}" ng-show="$index<(ctrl.photonumber)" alt="">
+		</div>
+
+		<div col-xs-12 col-centered>
+			<img class="photos__load" src="assets/img/showmore.png" ng-click="ctrl.showMorePhotos()" ng-show="ctrl.photonumber<ctrl.totalphotonumber" alt="">	
+			<img class="photos__load" src="assets/img/showless.png" ng-click="ctrl.showLessPhotos()" ng-show="ctrl.photonumber>=ctrl.totalphotonumber" alt="">	
+			
+		</div>
 	</div>
+	
 </div>
+
+
+<!-- Contact Us -->
+<div class="contactus__container container-fluid">
+	Contact Us
+	<form ng-show="ctrl.showcontactus">
+		<table>
+			<tr>
+				<td><input type="text" placeholder="Name" ng-model="ctrl.contactusname"></td>
+			</tr>
+			<tr>
+				<td><input type="email" placeholder="Email" ng-model="ctrl.contactusemail"></td>
+			</tr>
+			<tr>
+				<td><textarea name="" id="" cols="30" rows="10" placeholder="Enter your message here" ng-model="ctrl.contactusmsg"></textarea></td>
+			</tr>
+			<tr>
+				<td><button ng-click="ctrl.contactUs()">Send</button></td>
+			</tr>
+		</table>
+	</form>
+	<div ng-show="!ctrl.showcontactus">Thank you. Your message has been sent.</div>
+</div>
+
 

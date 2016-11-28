@@ -6,9 +6,7 @@
 			'ui.router',
 			'ngAnimate',
 			'ui.bootstrap',
-			'ui.calendar',
-			'ngSanitize',
-			'com.2fdevs.videogular'
+			'ui.calendar'
 		]);
 
 	angular
@@ -20,7 +18,15 @@
 					.state('home', {
 						url:'/home',
 						templateUrl:'site/partials/home.html',
-						controller:'HomeController as ctrl'
+						controller:'HomeController as ctrl',
+						resolve: {
+							heroImgResolve: function(HomeSrv){
+								return HomeSrv.getFileNames('hero');
+							},
+							photoResolve: function(HomeSrv){
+								return HomeSrv.getFileNames('photo');
+							}
+						}
 					})
 		})
 })();
