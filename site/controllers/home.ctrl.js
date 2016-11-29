@@ -115,7 +115,5 @@
 			ctrl.showcontactus = false;
 		}
 
-
-		console.log("Controller Loaded")
 	}
 })();

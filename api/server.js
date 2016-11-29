@@ -1,5 +1,6 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
+    port = 80;
     app = express();
 
 // Configuration
@@ -18,8 +19,8 @@ app.use('/api/filedir', filedir_routes);
 app.use('/api/mailer', mailer_routes);
 
 // Listen
-app.listen(8080, function() {
-	console.log('Server Started on http://localhost:8080');
+app.listen(port, function() {
+	console.log('Server Started on http://localhost:' + port);
 	console.log('Press CTRL + C to stop server');
 });
 
