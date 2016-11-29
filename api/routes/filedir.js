@@ -2,7 +2,7 @@ var dir = require('node-dir'),
     router 	= require('express').Router(); 
 
 router.get('/hero', function(req, res){
-    console.log('trying to get hero images')
+    // console.log('trying to get hero images')
     var herofilepath = 'assets/img/herophotos/'; 
     // when run server.js from within api folder, the path is '../assets/img/herophotos/'
     // when run server.js from app base folder, the path is 'assets/img/herophotos/'
@@ -25,7 +25,7 @@ router.get('/hero', function(req, res){
 });
 
 router.get('/photos', function(req, res){
-    console.log('trying to get photos')
+    // console.log('trying to get photos')
     var photofilepath = 'assets/img/photos/';
 
     dir.files(photofilepath, function(err, files) {
