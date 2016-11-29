@@ -10,7 +10,7 @@ router.get('/hero', function(req, res){
 
     dir.files(herofilepath, function(err, files) {
         if (err) throw err;
-        console.log('Hero file names:', files);
+        // console.log('Hero file names:', files);
         var filenames = files.map(function(file){
             return file.replace(herofilepath, '');
         });
@@ -30,7 +30,7 @@ router.get('/photos', function(req, res){
 
     dir.files(photofilepath, function(err, files) {
         if (err) throw err;
-        console.log('photo file names:', files);
+        // console.log('photo file names:', files);
         var filenames = files.map(function(file){
             return file.replace(photofilepath, '');
         });
