@@ -65,12 +65,12 @@
 
 		<!-- Input fields for email list -->
 		<form class="joinus__form" method="POST" ng-show="ctrl.showjoinus">
-			<input type="text" ng-model="ctrl.joinusname">
-			<input type="email" ng-model="ctrl.joinusemail">
+			<input type="text" ng-model="ctrl.joinusname" placeholder="Name" required>
+			<input type="email" ng-model="ctrl.joinusemail" placeholder="Email" required>
 			<input type="submit" value="Add" class="btn" ng-click="ctrl.joinUs()">
 		</form>
 
-		<div ng-show="!ctrl.showjoinus">Thank you, and Welcome!</div>
+		<div class="joinus__text joinus__success" ng-show="!ctrl.showjoinus">Thank you, and Welcome!</div>
 		
 	</div>
 </div>
@@ -146,20 +146,20 @@
 						<td><p>Still have questions about our organization? Check out our Facebook page or leave us a message here: </p>  </td>
 					</tr>
 					<tr>
-						<td><input type="text" placeholder="Name" ng-model="ctrl.contactusname"></td>
+						<td><input type="text" placeholder="Name" ng-model="ctrl.contactusname" required></td>
 					</tr>
 					<tr>
-						<td><input type="email" placeholder="Email" ng-model="ctrl.contactusemail"></td>
+						<td><input type="email" placeholder="Email" ng-model="ctrl.contactusemail" required></td>
 					</tr>
 					<tr>
-						<td><textarea name="" id="" cols="30" rows="10" placeholder="Enter your message here" ng-model="ctrl.contactusmsg"></textarea></td>
+						<td><textarea name="" id="" cols="30" rows="10" placeholder="Enter your message here" ng-model="ctrl.contactusmsg" required></textarea></td>
 					</tr>
 					<tr>
 						<td><button class="btn" ng-click="ctrl.contactUs()">Send</button></td>
 					</tr>
 				</table>
 			</form>
-			<div ng-show="!ctrl.showcontactus">Thank you. Your message has been sent.</div>
+			<div class="contactus__success" ng-show="!ctrl.showcontactus">Thank you. Your message has been sent.</div>
 		</div>
 
 		<div class="contactus__right col-xs-12 col-sm-6">

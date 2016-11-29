@@ -155,6 +155,12 @@ ul.nav__list a{
 	font-size: 1.5em;
 	font-weight: 300;
 }
+.joinus__form {
+	padding-top: 20px;
+}
+.joinus__success{
+	padding-top: 20px;
+}
 
 /* Projects */
 .projects__container{
@@ -288,6 +294,9 @@ ul.nav__list a{
 	width: 100%;
 	resize: none;
 }
+.contactus__success{
+	padding-top: 4em;
+}
 .contactus__right{
 	font-family: 'Work Sans', sans-serif;
 	padding-top: 4em;
@@ -335,4 +344,16 @@ ul.nav__list a{
 	right: 15px;
 	bottom: 15px;
 	z-index: 9999;
+}
+
+/* Input boxes */
+input {
+	padding: 10px;
+	border: none;
+	border-bottom: solid 2px #c9c9c9;
+	transition: border 0.3s;
+}
+input:focus,
+input.focus {
+	border-bottom: solid 2px #969696;
 }
