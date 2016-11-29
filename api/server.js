@@ -1,6 +1,6 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
-    port = 80;
+    port = 80,
     app = express();
 
 // Configuration
