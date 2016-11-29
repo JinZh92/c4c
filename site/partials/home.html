@@ -67,14 +67,13 @@
 		<form class="joinus__form" method="POST" ng-show="ctrl.showjoinus" name="joinform">
 			<input type="text" id="joinname" name="joinname" ng-model="ctrl.joinusname" placeholder="Name" ng-minlength="2" ng-maxlength="20" required>	
 			<input type="email" id="joinemail" name="joinemail" ng-model="ctrl.joinusemail" placeholder="Email" required>
-			<input type="submit" value="Add" class="btn" ng-click="ctrl.joinUs()">
+			<input ng-disabled="joinform.$invalid" type="submit" value="Add" class="btn" ng-click="ctrl.joinUs()">
 
 			<div class="joinus__form--error">
 				<span ng-show="(joinform.joinname.$dirty && joinform.joinemail.$dirty) &&(joinform.joinname.$error.required || joinform.joinemail.$error.required)">Both fields are required. </span>
 				<span ng-show="joinform.joinname.$dirty && joinform.joinname.$error.minlength">Name is too short. </span>
 				<span ng-show="joinform.joinemail.$dirty && joinform.joinemail.$error.email">Invalid email format. </span>
 			</div>
-			
 			
 		</form>
 
@@ -174,7 +173,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><button class="btn" ng-click="ctrl.contactUs()">Send</button></td>
+						<td><button ng-disabled="contactform.$invalid" class="btn" ng-click="ctrl.contactUs()">Send</button></td>
 					</tr>
 				</table>
 			</form>
