@@ -64,10 +64,18 @@
 		</div>
 
 		<!-- Input fields for email list -->
-		<form class="joinus__form" method="POST" ng-show="ctrl.showjoinus">
-			<input type="text" ng-model="ctrl.joinusname" placeholder="Name" required>
-			<input type="email" ng-model="ctrl.joinusemail" placeholder="Email" required>
+		<form class="joinus__form" method="POST" ng-show="ctrl.showjoinus" name="joinform">
+			<input type="text" id="joinname" name="joinname" ng-model="ctrl.joinusname" placeholder="Name" ng-minlength="2" ng-maxlength="20" required>	
+			<input type="email" id="joinemail" name="joinemail" ng-model="ctrl.joinusemail" placeholder="Email" required>
 			<input type="submit" value="Add" class="btn" ng-click="ctrl.joinUs()">
+
+			<div class="joinus__form--error">
+				<span ng-show="(joinform.joinname.$dirty && joinform.joinemail.$dirty) &&(joinform.joinname.$error.required || joinform.joinemail.$error.required)">Both fields are required. </span>
+				<span ng-show="joinform.joinname.$dirty && joinform.joinname.$error.minlength">Name is too short. </span>
+				<span ng-show="joinform.joinemail.$dirty && joinform.joinemail.$error.email">Invalid email format. </span>
+			</div>
+			
+			
 		</form>
 
 		<div class="joinus__text joinus__success" ng-show="!ctrl.showjoinus">Thank you. Welcome!</div>
@@ -140,19 +148,30 @@
 	<div class="row row-centered">
 		<div class="contactus__title col-xs-12">Contact Us</div>
 		<div class="contactus__form col-xs-12 col-sm-6">
-			<form ng-show="ctrl.showcontactus">
+			<form ng-show="ctrl.showcontactus" name="contactform">
 				<table>
 					<tr>
 						<td><p>Still have questions about our organization? Check out our Facebook page or leave us a message here: </p>  </td>
 					</tr>
 					<tr>
-						<td><input type="text" placeholder="Name" ng-model="ctrl.contactusname" required></td>
+						<td>
+							<input name="contactname" id="contactname" type="text" placeholder="Name" ng-model="ctrl.contactusname" ng-minlength="2" required>							
+							<span ng-show="contactform.contactname.$dirty && contactform.contactname.$error.required">Required.</span>
+							<span ng-show="contactform.contactname.$dirty && contactform.contactname.$error.minlength">Too short.</span>
+						</td>
 					</tr>
 					<tr>
-						<td><input type="email" placeholder="Email" ng-model="ctrl.contactusemail" required></td>
+						<td>
+							<input name="contactemail" id="contactemail" type="email" placeholder="Email" ng-model="ctrl.contactusemail" required>
+							<span ng-show="contactform.contactemail.$dirty && contactform.contactemail.$error.required">Required.</span>
+							<span ng-show="contactform.contactemail.$dirty && contactform.contactemail.$error.email">Invalid email format.</span>
+						</td>
 					</tr>
 					<tr>
-						<td><textarea name="" id="" cols="30" rows="10" placeholder="Enter your message here" ng-model="ctrl.contactusmsg" required></textarea></td>
+						<td>
+							<textarea name="contactmsg" id="contactmsg" cols="30" rows="10" placeholder="Enter your message here" ng-model="ctrl.contactusmsg" required></textarea>
+							<span ng-show="contactform.contactmsg.$dirty && contactform.contactmsg.$error.required">Required.</span>							
+						</td>
 					</tr>
 					<tr>
 						<td><button class="btn" ng-click="ctrl.contactUs()">Send</button></td>
@@ -163,7 +182,7 @@
 		</div>
 
 		<div class="contactus__right col-xs-12 col-sm-6">
-			<p>This site is developed with AngularJs. If you find any bugs, have general website suggestion (I know you might hate the design/colors/fonts. I do too...), want to complain, or just want to talk to me, feel free to shoot a message at:</p>
+			<p>This site is developed with AngularJs. If you find any bugs, have general website suggestion (design/colors/fonts, etc.), want to complain, or just would like to talk to me, feel free to shoot a message at:</p>
 			<p>jinpeng.zh11@gmail.com</p>
 
 		</div>
