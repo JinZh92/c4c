@@ -19,7 +19,7 @@
             if (type == 'hero') {
                 return $http.get('/api/filedir/hero')
                     .then(function(res){
-                        console.log("hero image res", res);
+                        // console.log("hero image res", res);
                         return res.data.herofilenames;
                     });
 

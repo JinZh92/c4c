@@ -1,15 +1,16 @@
 <!-- Nav Bar -->
-<div class="nav__container">
+<div class="nav__container" id="nav">
 	<div class="nav__icon">
+		<img src="assets/img/logo.jpg" alt="">
 	</div>
 
 	<ul class="nav__list">
-		<li>About Us</li>
-		<li>Our Events</li>
-		<li>Join Us</li>
-		<li>Our Projects</li>
-		<li>Photos</li>		
-		<li>Contact Us</li>
+		<li><a href='' ng-click='ctrl.scrollTo("aboutus")'>ABOUT</a></li>
+		<li><a href='' ng-click='ctrl.scrollTo("events")'>EVENTS</a></li>
+		<li><a href='' ng-click='ctrl.scrollTo("joinus")'>JOIN</a></li>
+		<li><a href='' ng-click='ctrl.scrollTo("projectvideo")'>PROJECTS</a></li>
+		<li><a href='' ng-click='ctrl.scrollTo("photos")'>PHOTOS</a></li>		
+		<li><a href='' ng-click='ctrl.scrollTo("contactus")'>CONTACT</a></li>
 	</ul>
 </div>
 
@@ -21,25 +22,31 @@
 		</div>
 	</div>
 	
+	<div class="hero__logo">
+		<div class="col-xs-6 col-centered">
+			<img src="assets/img/c4cicon.png" alt="">
+		</div>
+		
+	</div>
 </div>
 
 <!-- About Us -->
-<div class="aboutus__container container-fluid">
+<div class="aboutus__container container-fluid" id="aboutus">
 	<div class="row row-centered">
 		<div class="aboutus__intro col-xs-10 col-centered">
 			Campaign for Community is a for-students-by-Students organization enhancing community and quality of life for students at the University of Toronto.
 		</div>
 		<div class="aboutus__link col-xs-8 col-centered">
-			<a href="https://www.facebook.com/ouruoft/" target="_blank"><div class="col-xs-4">facebook</div></a>
-			<a href="https://www.facebook.com/ouruoft/" target="_blank"><div class="col-xs-4">instagram</div></a>
-			<a href="https://www.facebook.com/ouruoft/" target="_blank"><div class="col-xs-4">email</div></a>
+			<a href="https://www.facebook.com/ouruoft/" target="_blank"><div class="col-xs-4 fa fa-facebook-square fa-3x"></div></a>
+			<a href="https://www.instagram.com/uoftc4c/" target="_blank"><div class="col-xs-4 fa fa-instagram fa-3x"></div></a>
+			<a href="https://www.youtube.com/channel/UCqwiPi58QpxysQDFyzb_uwQ" target="_blank"><div class="col-xs-4 fa fa-youtube-square fa-3x"></div></a>
 		</div>
 	</div>
 </div>
 
 
 <!-- Our Events - Calendar-->
-<div class="events__container container-fluid">
+<div class="events__container container-fluid" id="events">
 	<div class="row row-centered">
 		<div class="events__title col-xs-10 col-centered">Events Calendar</div>
 	</div>
@@ -48,7 +55,7 @@
 </div>
 
 <!-- Join Us -->
-<div class="joinus__container container-fluid">
+<div class="joinus__container container-fluid" id="joinus">
 	
 	<div class="row row-centered">
 		<div class="joinus__title col-xs-12 col-centered">Join Us</div>
@@ -60,7 +67,7 @@
 		<form class="joinus__form" method="POST" ng-show="ctrl.showjoinus">
 			<input type="text" ng-model="ctrl.joinusname">
 			<input type="email" ng-model="ctrl.joinusemail">
-			<input type="submit" value="Add" ng-click="ctrl.joinUs()">
+			<input type="submit" value="Add" class="btn" ng-click="ctrl.joinUs()">
 		</form>
 
 		<div ng-show="!ctrl.showjoinus">Thank you, and Welcome!</div>
@@ -70,13 +77,15 @@
 
 <!-- C4C Video -->
 
-<div class="video-container">
+<div class="video-container" id="projectvideo">
 	<iframe src="https://player.vimeo.com/video/191602887" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
 <!-- Our Projects -->
 <div class="projects__container container-fluid">
 	<div class="row row-centered">
+		<div class="joinus__title  col-xs-10 col-centered">Our Projects</div>
+		
 		<!-- can use ng-repeat here -->
 		<div class="projects__list col-xs-12 col-sm-4 col-centered">
 			<div class="projects__img">
@@ -100,22 +109,25 @@
 			<div class="projects__intro">Love these events? Well come out to meetings and help volunteer!</div>
 		</div>
 
+		<div class="projects__footer col-xs-10 col-centered"><i class="fa fa-info-circle" aria-hidden="true"></i> Follow us on social medias to learn more</div>
+
 	</div>
 </div>
 
 <div class="body__divider div__centered"></div>
 
 <!-- Photos -->
-<div class="photos__container container-fluid">
+<div class="photos__container container-fluid" id="photos">
 	<div class="row row-centered">
+		<div class="events__title  col-xs-10 col-centered">Photo Gallery</div>
 		<!-- can use ng-repeat here -->
 		<div class="col-xs-6 col-sm-4 col-md-3 col-centered photos__photo" ng-repeat="photo in ctrl.photos track by $index">
 			<img class="photos__item" ng-src="{{photo.url}}" ng-show="$index<(ctrl.photonumber)" alt="">
 		</div>
 
 		<div col-xs-12 col-centered>
-			<img class="photos__load" src="assets/img/showmore.png" ng-click="ctrl.showMorePhotos()" ng-show="ctrl.photonumber<ctrl.totalphotonumber" alt="">	
-			<img class="photos__load" src="assets/img/showless.png" ng-click="ctrl.showLessPhotos()" ng-show="ctrl.photonumber>=ctrl.totalphotonumber" alt="">	
+			<button class="photos__load fa fa-angle-double-down" aria-hidden="true" ng-click="ctrl.showMorePhotos()" ng-show="ctrl.photonumber<ctrl.totalphotonumber"></button>
+			<button class="photos__load fa fa-angle-double-up" aria-hidden="true" ng-click="ctrl.showLessPhotos()" ng-show="ctrl.photonumber>=ctrl.totalphotonumber"></button>
 			
 		</div>
 	</div>
@@ -124,25 +136,58 @@
 
 
 <!-- Contact Us -->
-<div class="contactus__container container-fluid">
-	Contact Us
-	<form ng-show="ctrl.showcontactus">
-		<table>
-			<tr>
-				<td><input type="text" placeholder="Name" ng-model="ctrl.contactusname"></td>
-			</tr>
-			<tr>
-				<td><input type="email" placeholder="Email" ng-model="ctrl.contactusemail"></td>
-			</tr>
-			<tr>
-				<td><textarea name="" id="" cols="30" rows="10" placeholder="Enter your message here" ng-model="ctrl.contactusmsg"></textarea></td>
-			</tr>
-			<tr>
-				<td><button ng-click="ctrl.contactUs()">Send</button></td>
-			</tr>
-		</table>
-	</form>
-	<div ng-show="!ctrl.showcontactus">Thank you. Your message has been sent.</div>
+<div class="contactus__container container-fluid" id="contactus">
+	<div class="row row-centered">
+		<div class="contactus__title col-xs-12">Contact Us</div>
+		<div class="contactus__form col-xs-12 col-sm-6">
+			<form ng-show="ctrl.showcontactus">
+				<table>
+					<tr>
+						<td><p>Still have questions about our organization? Check out our Facebook page or leave us a message here: </p>  </td>
+					</tr>
+					<tr>
+						<td><input type="text" placeholder="Name" ng-model="ctrl.contactusname"></td>
+					</tr>
+					<tr>
+						<td><input type="email" placeholder="Email" ng-model="ctrl.contactusemail"></td>
+					</tr>
+					<tr>
+						<td><textarea name="" id="" cols="30" rows="10" placeholder="Enter your message here" ng-model="ctrl.contactusmsg"></textarea></td>
+					</tr>
+					<tr>
+						<td><button class="btn" ng-click="ctrl.contactUs()">Send</button></td>
+					</tr>
+				</table>
+			</form>
+			<div ng-show="!ctrl.showcontactus">Thank you. Your message has been sent.</div>
+		</div>
+
+		<div class="contactus__right col-xs-12 col-sm-6">
+			<p>This site is developed with AngularJs. If you find any bugs, have general website suggestion (I know you might hate the design/colors/fonts. I do too...), want to complain, or just want to talk to me, feel free to shoot a message at:</p>
+			<p>jinpeng.zh11@gmail.com</p>
+
+		</div>
+
+	</div>
+
 </div>
 
+<!-- Back to top button -->
+<div class="icon-top" ng-click='ctrl.scrollTo("nav")' ng-show="ctrl.showToTop">
+	<button class="toTopBtn fa fa-arrow-up"></button>
+</div>
 
+<div class="footer__container">
+	<div class="row row-centered">
+		<div class="col-xs-6">
+			<br>
+			Campaign for Community
+		</div>
+		<div class="col-xs-6 col-centered">
+			<div>Form bonds.</div>
+			<div>Feed positivity.</div>
+			<div>Create community.</div>
+		</div>		
+	</div>
+
+</div>
