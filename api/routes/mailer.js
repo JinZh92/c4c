@@ -29,8 +29,10 @@ router.post('/', function(req,res){
     smtpTrans.sendMail(mailOpts, function(error, response) {
         if (error) {
             response.json({error: error});
+            res.send(500);
             console.log(error);
         } else {
+            res.send(200);
             console.log('email sent')
         }
     })
